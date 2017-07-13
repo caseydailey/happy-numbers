@@ -38,10 +38,6 @@ function isHappy(num){
     }
 }
 
-// function isHappy(num){
-//     switch(num)
-// };
-
 
 //happy message
 function printHappy(val){
@@ -50,7 +46,7 @@ function printHappy(val){
 
 //sad message
 function printSad(val){
-    happy.innerHTML = `<p>${val} is a sad number 😥 </p>`;
+    happy.innerHTML = `<p>${val} is a sad number 😥</p>`;
 }
 
 //if it was not a positive integer
