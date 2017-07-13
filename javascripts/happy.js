@@ -30,11 +30,11 @@ function isHappy(num){
 };
 
 function printHappy(val){
-    happy.innerHTML = `<p>${val} is a happy number :)</p>`;
+    happy.innerHTML = `<p>${val} is a happy number 😀</p>`;
 }
 
 function printSad(val){
-    happy.innerHTML = `<p>${val} is a sad number :( </p>`;
+    happy.innerHTML = `<p>${val} is a sad number 😥 </p>`;
 }
 
 
@@ -46,7 +46,7 @@ function run(){
         let happy = isHappy(val);
         happy ? printHappy(val) : printSad(val);    
     }else{
-        happy.innerHTML = `<p>Positive integers only please!</p>`;
+        happy.innerHTML = `<p>Positive integers only silly 😜</p>`;
         
     }
 }
