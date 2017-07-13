@@ -1,11 +1,9 @@
-console.log("happy 2");
 
-
-let button = document.getElementById("btn-checkvalue");
 let input = document.getElementById("numberVal");
 let happy = document.getElementById("happy");
+
 input.addEventListener("keyup", (e)=> e.keyCode === 13 ? run() : null);
-button.addEventListener("click", run);
+
 
 function sumSquares(numStr){
 
