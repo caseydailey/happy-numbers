@@ -35,10 +35,14 @@ function isHappy(num){
     } else {
         //convert back to a string before sending it back 
         //so we can split
-        newNumStr = num.toString();
+        let newNumStr = num.toString();
         return isHappy(sumSquares(newNumStr));
     }
 };
+
+// function isHappy(num){
+//     switch(num)
+// };
 
 
 //happy message
