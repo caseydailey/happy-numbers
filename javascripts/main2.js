@@ -3,6 +3,8 @@ console.log("happy 2");
 
 let button = document.getElementById("btn-checkvalue");
 let input = document.getElementById("numberVal");
+let happy = document.getElementById("happy");
+
 input.addEventListener("keyup", (e)=> e.keyCode === 13 ? run() : null);
 button.addEventListener("click", run);
 
@@ -29,11 +31,11 @@ function isHappy(num){
 };
 
 function printHappy(val){
-    console.log(`${val} is a happy number`)
+    happy.innerHTML = `$<p>{val} is a happy number</p>`;
 }
 
 function printSad(val){
-    console.log(`${val} is a sad number`)
+    happy.innerHTML = `<p>${val} is a sad number</p>`;
 }
 
 
@@ -45,7 +47,7 @@ function run(){
         let happy = isHappy(val);
         happy ? printHappy(val) : printSad(val);    
     }else{
-        console.log("Positive integers only please");
+        happy.innerHTML = `<p>Positive integers only please.</p>`;
     }
 }
 
