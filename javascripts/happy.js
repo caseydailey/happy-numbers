@@ -23,22 +23,20 @@ function sumSquares(numStr){
 };
 
 //recursively check if you've reached 1 or 4 
-//(All non-happy numbers follow sequences that reach the cycle: 4, 16, 37, 58, 89, 145, 42, 20, 4, ...)
 //if reach 1, you're happy
 //if you reach 4, you'll never be happy
-//until you reach one or the other, keep summing your squares!
+//(All non-happy numbers follow sequences that reach the cycle: 4, 16, 37, 58, 89, 145, 42, 20, 4, ...)
 function isHappy(num){
-    if (num === 1){
-        return true;
-    } else if (num === 4){
-        return false;
-    } else {
-        //convert back to a string before sending it back 
-        //so we can split
-        let newNumStr = num.toString();
-        return isHappy(sumSquares(newNumStr));
+    switch(num){
+        case 1:
+            return true;
+        case 4:
+            return false;
+        default:
+            let reNumStr = num.toString();
+            return isHappy(sumSquares(reNumStr));
     }
-};
+}
 
 // function isHappy(num){
 //     switch(num)
@@ -60,24 +58,25 @@ function printInputError(){
     happy.innerHTML = `<p>Positive integers only silly 😜</p>`;
 }
 
-
-//the main jam:
-//get the input
-//check if its a positive integer (thanks stack overflow)
-//https://stackoverflow.com/questions/10834796/validate-that-a-string-is-a-positive-integer
-//user: Niko
-//if it is, pass it to is happy and display the appropriate message
+//the main jam
 function run(){
+
+    //get the value and clear the input
     let val = input.value;
     input.value = "";
+
+    //check if its a positive integer (thanks stack overflow questions/10834796) 
     let isInt = /^\+?\d+$/.test(val);
+
+    //input's good, but is it happy?
     if(isInt && val > 0){
         let happy = isHappy(val);
         happy ? printHappy(val) : printSad(val);    
-    }else{
+    } else {
         printInputError();        
     }
-}
+
+}//end run
 
 
 
